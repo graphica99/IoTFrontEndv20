@@ -36,7 +36,7 @@ export const logOut = () => {
 export const signUp = (username, email, password) => (dispatch) =>
   new Promise(function (resolve, reject) {
     axios
-      .post('http://10.10.64.11:5000/api/iot/v2.0/user/sign-up', {
+      .post('https://io-tv2-0-backend.vercel.app/api/iot/v2.0/user/sign-up', {
         name: username,
         email: email,
         password: password
@@ -58,7 +58,7 @@ export const signUp = (username, email, password) => (dispatch) =>
 export const signIn = (email, password) => (dispatch) =>
   new Promise(function (resolve, reject) {
     axios
-      .post('http://10.10.64.11:5000/api/iot/v2.0/user/sign-in', {
+      .post('https://io-tv2-0-backend.vercel.app/api/iot/v2.0/user/sign-in', {
         email: email,
         password: password
       })
