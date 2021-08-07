@@ -77,8 +77,7 @@ const CustomerList = () => {
     var projectId = localStorage.getItem('project_id');
     axios
       .post(
-        // 'http://localhost:5000/api/iot/v2.0/device/add-device',
-        'http://10.10.64.11:5000/api/iot/v2.0/device/add-device',
+        'https://iotdevlab.herokuapp.com/api/iot/v2.0/device/add-device',
         {
           name: deviceName,
           purpose: devicePurpose,
@@ -109,7 +108,7 @@ const CustomerList = () => {
     var projectId = localStorage.getItem('project_id');
     axios
       .get(
-        `http://10.10.64.11:5000/api/iot/v2.0/device/get-devices/?project_id=${projectId}`,
+        `https://iotdevlab.herokuapp.com/api/iot/v2.0/device/get-devices/?project_id=${projectId}`,
         // `http://localhost:5000/api/iot/v2.0/device/get-devices/?project_id=${projectId}`,
         {
           headers: {

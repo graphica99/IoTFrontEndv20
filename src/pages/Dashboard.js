@@ -40,8 +40,7 @@ const Dashboard = (props) => {
     console.log('Devices Refresh ==============================');
     axios
       .get(
-        // `http://localhost:5000/api/iot/v2.0/device/get-devices/?project_id=${projectId}`,
-        `http://10.10.64.11:5000/api/iot/v2.0/device/get-devices/?project_id=${projectId}`,
+        `https://iotdevlab.herokuapp.com/api/iot/v2.0/device/get-devices/?project_id=${projectId}`,
         {
           headers: {
             'x-auth-token': token

@@ -19,7 +19,7 @@ const ProductCard = ({ product, ...rest }) => {
     var token = localStorage.getItem('UserToken');
     axios
       .delete(
-        `http://localhost:5000/api/iot/v2.0/project/delete-project/${id}`,
+        `https://iotdevlab.herokuapp.com/api/iot/v2.0/project/delete-project/${id}`,
         {
           headers: {
             'x-auth-token': token
