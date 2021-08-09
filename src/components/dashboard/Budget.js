@@ -51,7 +51,7 @@ const Budget = (props) => {
     const socket = openSocket('https://iotdevlab.herokuapp.com');
     var top = localStorage.getItem('topic');
     socket.on(top, (data) => {
-      // console.log(data.message);
+      console.log(data.message);
       setData(data.message);
     });
     return () => {

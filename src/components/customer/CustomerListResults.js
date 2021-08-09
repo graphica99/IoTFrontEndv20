@@ -27,11 +27,14 @@ const CustomerListResults = ({ customers, ...rest }) => {
     var token =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhMjhiNmZlMzAxMjMzZjU0MTkyOGRmIn0sImlhdCI6MTYyMTYyNzg5MX0.YlUPP8mXWu6CsFtmPYGpBWZ9NNzn0Je9VRw1RmGjS2I';
     axios
-      .delete(`http://localhost:5000/api/iot/v2.0/device/delete-device/${id}`, {
-        headers: {
-          'x-auth-token': token
+      .delete(
+        `https://iotdevlab.herokuapp.com/api/iot/v2.0/device/delete-device/${id}`,
+        {
+          headers: {
+            'x-auth-token': token
+          }
         }
-      })
+      )
       .then((device) => {
         location.reload();
       })

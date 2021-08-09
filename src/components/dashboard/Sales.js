@@ -7,7 +7,9 @@ import openSocket from 'socket.io-client';
 
 const Charts = (props) => {
   console.log('hey! I am chart and i am rendering everytime');
-  const [socket] = useState(() => openSocket('http://localhost:5000'));
+  const [socket] = useState(() =>
+    openSocket('https://iotdevlab.herokuapp.com')
+  );
 
   const colors = [
     '#34568B',
