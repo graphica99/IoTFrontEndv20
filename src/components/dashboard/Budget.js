@@ -26,7 +26,7 @@ const Budget = (props) => {
     // console.log('Websocket Refresh ==============================');
     var token = localStorage.getItem('UserToken');
     axios
-      .get('http://localhost:5000/api/iot/v2.0/detail/get-details', {
+      .get('https://iotdevlab.herokuapp.com/api/iot/v2.0/detail/get-details', {
         headers: {
           'x-auth-token': token
         }
@@ -34,7 +34,7 @@ const Budget = (props) => {
       .then((dev) => {})
       .catch((e) => console.log(e));
 
-    const socket = openSocket('http://localhost:5000');
+    const socket = openSocket('https://iotdevlab.herokuapp.com');
     // var top = localStorage.getItem('topic');
     // socket.on(top, (data) => {
     //   // console.log(data.message);
@@ -48,7 +48,7 @@ const Budget = (props) => {
   }, []);
 
   useEffect(() => {
-    const socket = openSocket('http://localhost:5000');
+    const socket = openSocket('https://iotdevlab.herokuapp.com');
     var top = localStorage.getItem('topic');
     socket.on(top, (data) => {
       // console.log(data.message);
@@ -75,7 +75,7 @@ const Budget = (props) => {
     var topic = localStorage.getItem('topic');
     axios
       .post(
-        `http://localhost:5000/api/iot/v2.0/detail/download-data/${topic}/${select}`,
+        `https://iotdevlab.herokuapp.com/api/iot/v2.0/detail/download-data/${topic}/${select}`,
         {},
         {
           headers: {
